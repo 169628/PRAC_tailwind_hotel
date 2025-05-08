@@ -59,7 +59,7 @@ function App() {
           </a>
         </div>
       </section>
-      <section className="mt-100">
+      <section className="mt-50">
         <div className="container mx-auto">
           <a href="#" className="btn-dark rounded-sm">
             SUBSCRIBE

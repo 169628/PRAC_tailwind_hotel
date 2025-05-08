@@ -24,7 +24,7 @@
 }
 
 .btn-light {
-  @apply text-sm text-primary font-open-sans font-bold py-2 px-4 border border-primary rounded-sm;
+  @apply text-sm text-primary font-open-sans font-bold flex items-center py-2 px-4 border border-primary rounded-sm;
 }
 
 /* section title */
@@ -37,7 +37,7 @@
   @apply inline-flex px-4 md:px-6 py-[2px]  font-raleway font-bold text-tertiary hover:text-primary hover:border-b-2 hover:border-primary;
 }
 .tab-text {
-  @apply text-xl lg:text-2xl;
+  @apply text-xl md:text-2xl;
 }
 
 /* section Popular Destinations 卡片 */

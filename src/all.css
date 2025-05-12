@@ -45,7 +45,7 @@
   @apply relative bg-cover bg-center rounded-lg overflow-hidden py-4 px-6 flex justify-between items-center;
 }
 .destination-drop {
-  @apply backdrop-brightness-50 w-full h-full absolute top-0 left-0;
+  @apply backdrop-brightness-50 w-full h-full absolute top-0 left-0 z-30;
 }
 .destination-country {
   @apply text-morning font-open-sans font-bold text-xs;

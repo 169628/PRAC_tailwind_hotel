@@ -1,140 +1,148 @@
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from 'swiper/modules';
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 function App() {
-  const bannerImg = [{id:1,url:"/src/assets/index-banner.jpg"},{id:2,url:"/src/assets/Chatuchack2.jpg"},{id:3,url:"/src/assets/Bangkok.jpg"},{id:4,url:"/src/assets/Bangkapi.jpg"}]
+  const bannerImg = [
+    { id: 1, url: "/src/assets/index-banner.jpg" },
+    { id: 2, url: "/src/assets/Chatuchack2.jpg" },
+    { id: 3, url: "/src/assets/Bangkok.jpg" },
+    { id: 4, url: "/src/assets/Bangkapi.jpg" },
+  ];
   const choices = [
     {
-        "id": "1",
-        "name": "Hotel Aqua",
-        "stars": 5,
-        "reviews": 2000,
-        "price": 2480,
-        "originalPrice": 3980,
-        "url": "/src/assets/top1.jpg"
+      id: "1",
+      name: "Hotel Aqua",
+      stars: 5,
+      reviews: 2000,
+      price: 2480,
+      originalPrice: 3980,
+      url: "/src/assets/top1.jpg",
     },
     {
-        "id": "2",
-        "name": "Mr. Kawasaki Inn",
-        "stars": 4,
-        "reviews": 500,
-        "price": 3380,
-        "url": "/src/assets/top2.jpg"
+      id: "2",
+      name: "Mr. Kawasaki Inn",
+      stars: 4,
+      reviews: 500,
+      price: 3380,
+      url: "/src/assets/top2.jpg",
     },
     {
-        "id": "3",
-        "name": "Weekly Paradise",
-        "stars": 4,
-        "reviews": 470,
-        "price": 4780,
-        "url": "/src/assets/top3.jpg"
+      id: "3",
+      name: "Weekly Paradise",
+      stars: 4,
+      reviews: 470,
+      price: 4780,
+      url: "/src/assets/top3.jpg",
     },
     {
-        "id": "4",
-        "name": "Beast Hotel",
-        "stars": 4,
-        "reviews": 283,
-        "price": 1980,
-        "url": "/src/assets/top4.jpg"
+      id: "4",
+      name: "Beast Hotel",
+      stars: 4,
+      reviews: 283,
+      price: 1980,
+      url: "/src/assets/top4.jpg",
     },
     {
-      "id": "5",
-      "name": "Grand Hyatt",
-      "stars": 5,
-      "reviews": 2431,
-      "price": 6800,
-      "url": "/src/assets/Watana2.jpg"
+      id: "5",
+      name: "Grand Hyatt",
+      stars: 5,
+      reviews: 2431,
+      price: 6800,
+      url: "/src/assets/Watana2.jpg",
     },
     {
-      "id": "6",
-      "name": "Millennium Hotel Taichung",
-      "stars": 4,
-      "reviews": 1587,
-      "price": 4200,
-      "url": "/src/assets/Rachada1.jpg"
+      id: "6",
+      name: "Millennium Hotel Taichung",
+      stars: 4,
+      reviews: 1587,
+      price: 4200,
+      url: "/src/assets/Rachada1.jpg",
     },
     {
-      "id": "7",
-      "name": "Han Lai Hotel",
-      "stars": 5,
-      "reviews": 1983,
-      "price": 5600,
-      "url": "/src/assets/DinDaeng1.jpg"
+      id: "7",
+      name: "Han Lai Hotel",
+      stars: 5,
+      reviews: 1983,
+      price: 5600,
+      url: "/src/assets/DinDaeng1.jpg",
     },
     {
-      "id": "8",
-      "name": "Fullon Hotel",
-      "stars": 4,
-      "reviews": 1120,
-      "price": 3500,
-      "url": "/src/assets/RangRak.jpg"
-    }
-]
+      id: "8",
+      name: "Fullon Hotel",
+      stars: 4,
+      reviews: 1120,
+      price: 3500,
+      url: "/src/assets/RangRak.jpg",
+    },
+  ];
 
   const destinations = [
     {
-        "id": "1",
-        "country": "JAPAN",
-        "city": "Osaka",
-        "url": "/src/assets/Osaka.jpg"
+      id: "1",
+      country: "JAPAN",
+      city: "Osaka",
+      url: "/src/assets/Osaka.jpg",
     },
     {
-        "id": "2",
-        "country": "JAPAN",
-        "city": "Kyoto",
-        "url": "/src/assets/Kyoto.jpg"
+      id: "2",
+      country: "JAPAN",
+      city: "Kyoto",
+      url: "/src/assets/Kyoto.jpg",
     },
     {
-        "id": "3",
-        "country": "ICELAND",
-        "city": "Reykjavík",
-        "url": "/src/assets/Reykjavic.jpg"
+      id: "3",
+      country: "ICELAND",
+      city: "Reykjavík",
+      url: "/src/assets/Reykjavic.jpg",
     },
     {
-        "id": "4",
-        "country": "FRANCE",
-        "city": "Paris",
-        "url": "/src/assets/Paris.jpg"
+      id: "4",
+      country: "FRANCE",
+      city: "Paris",
+      url: "/src/assets/Paris.jpg",
     },
     {
-        "id": "5",
-        "country": "ITALY",
-        "city": "Roma",
-        "url": "/src/assets/Roman.jpg"
+      id: "5",
+      country: "ITALY",
+      city: "Roma",
+      url: "/src/assets/Roman.jpg",
     },
     {
-        "id": "6",
-        "country": "THAILAND",
-        "city": "Bangkok",
-        "url": "/src/assets/Bangkok.jpg"
-    }
-]
+      id: "6",
+      country: "THAILAND",
+      city: "Bangkok",
+      url: "/src/assets/Bangkok.jpg",
+    },
+  ];
 
-const inspiration =[
-  {
-      "id": "1",
-      "title": "The Fifth Most Visited Country",
-      "content": "Italy is the fifth most visited country in the world, with a total of 52.3 million…",
-      "url": "/src/assets/italy.jpg"
-  },
-  {
-      "id": "2",
-      "title": "Visit Thailand for Bangkok",
-      "content": "Asian tourists primarily visit Thailand for Bangkok and the historical, natural, and…",
-      "url": "/src/assets/Thailand.jpg"
-  },
-  {
-      "id": "3",
-      "title": "  Lord of the Rings Tour",
-      "content": "The national cuisine has been described as Pacific Rim, incorporating the native Māori…",
-      "url": "/src/assets/NewZealand.jpg"
-  }
-]
+  const inspiration = [
+    {
+      id: "1",
+      title: "The Fifth Most Visited Country",
+      content:
+        "Italy is the fifth most visited country in the world, with a total of 52.3 million…",
+      url: "/src/assets/italy.jpg",
+    },
+    {
+      id: "2",
+      title: "Visit Thailand for Bangkok",
+      content:
+        "Asian tourists primarily visit Thailand for Bangkok and the historical, natural, and…",
+      url: "/src/assets/Thailand.jpg",
+    },
+    {
+      id: "3",
+      title: "  Lord of the Rings Tour",
+      content:
+        "The national cuisine has been described as Pacific Rim, incorporating the native Māori…",
+      url: "/src/assets/NewZealand.jpg",
+    },
+  ];
   const swiperRef = useRef(null);
   const nextBtn = () => {
     swiperRef.current.isEnd
@@ -179,23 +187,26 @@ const inspiration =[
       {/* banner */}
       <section>
         <div className="w-full h-[50vh] relative">
-        <Swiper
-        modules={[Autoplay]}
-        className="h-[50vh]"
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        >{
-          bannerImg.map(item=>{
-            return(
-              <SwiperSlide  className="h-full" key={item.id}>
-          <img src={item.url} className="object-cover object-center w-full h-full" alt="" />
-          </SwiperSlide>
-            )
-          })
-        }
-        </Swiper>
+          <Swiper
+            modules={[Autoplay]}
+            className="h-[50vh]"
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+          >
+            {bannerImg.map((item) => {
+              return (
+                <SwiperSlide className="h-full" key={item.id}>
+                  <img
+                    src={item.url}
+                    className="object-cover object-center w-full h-full"
+                    alt=""
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
           <div className="destination-drop"></div>
           <div className="text-white text-[32px]  md:text-5xl font-raleway font-bold md:font-extrabold flex flex-col lg:flex-row items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40">
             <span>Discover your&nbsp;</span>
@@ -261,51 +272,64 @@ const inspiration =[
                   slidesPerView: 2,
                   spaceBetween: 30,
                 },
-                // when window width is >= 480px
                 1024: {
                   slidesPerView: 4,
                   spaceBetween: 30,
                 },
               }}
-              // navigation={true}
-              // modules={[Pagination, Navigation]}
               onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
-              {
-                choices.map(item=>{
-                  return(
-                    <SwiperSlide key={item.id}>
-                <img
-                  src={item.url}
-                  className="rounded-lg w-full h-60 object-cover"
-                  alt=""
-                />
-                <p className="font-open-sans font-bold text-accent text-base mt-2">
-                  {item.name}
-                </p>
-                <div className="mt-2 flex items-center">
-                  <span className="me-1">
-                    {
-                      Array.from({ length: item.stars }, (_, i) => i).map(item=>{
-                        return (
-                          <span className="material-icons" key={item}>star</span>
-                        )
-                      })
-                    }
-                  </span>
-                  <span className="text-sm text-tertiary">{item.stars.toFixed(1)}</span>
-                  <span className="text-xs text-muted">・{item.reviews < 1000 ? item.reviews : (item.reviews / 1000).toFixed(1).replace(/\.0$/, '') + 'k' } reviews</span>
-                </div>
-                <div className="mt-2">
-                  <span className="text-sm text-tertiary me-2">TWD {item.price.toLocaleString()}</span>
-                  { item.originalPrice ? <span className="text-xs text-muted line-through">
-                    TWD {item.originalPrice}
-                  </span> :"" }
-                </div>
-              </SwiperSlide>
-                  )
-                })
-              }
+              {choices.map((item) => {
+                return (
+                  <SwiperSlide key={item.id}>
+                    <img
+                      src={item.url}
+                      className="rounded-lg w-full h-60 object-cover"
+                      alt=""
+                    />
+                    <p className="font-open-sans font-bold text-accent text-base mt-2">
+                      {item.name}
+                    </p>
+                    <div className="mt-2 flex items-center">
+                      <span className="me-1">
+                        {Array.from({ length: item.stars }, (_, i) => i).map(
+                          (item) => {
+                            return (
+                              <span className="material-icons" key={item}>
+                                star
+                              </span>
+                            );
+                          }
+                        )}
+                      </span>
+                      <span className="text-sm text-tertiary">
+                        {item.stars.toFixed(1)}
+                      </span>
+                      <span className="text-xs text-muted">
+                        ・
+                        {item.reviews < 1000
+                          ? item.reviews
+                          : (item.reviews / 1000)
+                              .toFixed(1)
+                              .replace(/\.0$/, "") + "k"}{" "}
+                        reviews
+                      </span>
+                    </div>
+                    <div className="mt-2">
+                      <span className="text-sm text-tertiary me-2">
+                        TWD {item.price.toLocaleString()}
+                      </span>
+                      {item.originalPrice ? (
+                        <span className="text-xs text-muted line-through">
+                          TWD {item.originalPrice}
+                        </span>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
             <button
               type="button"
@@ -329,26 +353,24 @@ const inspiration =[
         <div className="container mx-auto">
           <h2 className="title mb-6">Popular Destinations</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-x-[30px] md:gap-y-6">
-            {
-              destinations.map(item=>{
-                return(
+            {destinations.map((item) => {
+              return (
                 <a
-              href="#"
-              className={`bg-[url(${item.url})] btn-destination`}
-              key={item.id}
-            >
-              <div className="destination-drop"></div>
-              <div className="z-40">
-                <p className="destination-country">{item.country}</p>
-                <p className="destination-city">{item.city}</p>
-              </div>
-              <span className="material-icons text-white z-40">
-                expand_more
-              </span>
-            </a>
-                )
-              })
-            }
+                  href="#"
+                  className={`bg-[url(${item.url})] btn-destination`}
+                  key={item.id}
+                >
+                  <div className="destination-drop"></div>
+                  <div className="z-40">
+                    <p className="destination-country">{item.country}</p>
+                    <p className="destination-city">{item.city}</p>
+                  </div>
+                  <span className="material-icons text-white z-40">
+                    expand_more
+                  </span>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -377,23 +399,20 @@ const inspiration =[
                 spaceBetween: 30,
               },
             }}
-          >{
-            inspiration.map(item=>{
-              return(
+          >
+            {inspiration.map((item) => {
+              return (
                 <SwiperSlide key={item.id}>
-              <img
-                src={item.url}
-                className="big-card-img w-full h-70 object-cover"
-                alt=""
-              />
-              <p className="big-card-title">{item.title}</p>
-              <p className="big-card-content">
-                {item.content}
-              </p>
-            </SwiperSlide>
-              )
-            })
-          }
+                  <img
+                    src={item.url}
+                    className="big-card-img w-full h-70 object-cover"
+                    alt=""
+                  />
+                  <p className="big-card-title">{item.title}</p>
+                  <p className="big-card-content">{item.content}</p>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </section>

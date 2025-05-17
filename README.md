@@ -12,6 +12,10 @@ https://xd.adobe.com/view/0cf6ec93-07a3-492f-58f2-9767ba1cfdfb-7ac7/
 
 部屬在 github page
 
+```
+https://169628.github.io/PRAC_tailwind_hotel/
+```
+
 ## 資料夾
 
 ```

@@ -8,10 +8,10 @@ import "swiper/css/navigation";
 
 function App() {
   const bannerImg = [
-    { id: 1, url: "/src/assets/index-banner.jpg" },
-    { id: 2, url: "/src/assets/Chatuchack2.jpg" },
-    { id: 3, url: "/src/assets/Bangkok.jpg" },
-    { id: 4, url: "/src/assets/Bangkapi.jpg" },
+    { id: 1, url: "/PRAC_tailwind_hotel/images/index-banner.jpg" },
+    { id: 2, url: "/PRAC_tailwind_hotel/images/Chatuchack2.jpg" },
+    { id: 3, url: "/PRAC_tailwind_hotel/images/Bangkok.jpg" },
+    { id: 4, url: "/PRAC_tailwind_hotel/images/Bangkapi.jpg" },
   ];
   const choices = [
     {
@@ -21,7 +21,7 @@ function App() {
       reviews: 2000,
       price: 2480,
       originalPrice: 3980,
-      url: "/src/assets/top1.jpg",
+      url: "/PRAC_tailwind_hotel/images/top1.jpg",
     },
     {
       id: "2",
@@ -29,7 +29,7 @@ function App() {
       stars: 4,
       reviews: 500,
       price: 3380,
-      url: "/src/assets/top2.jpg",
+      url: "/PRAC_tailwind_hotel/images/top2.jpg",
     },
     {
       id: "3",
@@ -37,7 +37,7 @@ function App() {
       stars: 4,
       reviews: 470,
       price: 4780,
-      url: "/src/assets/top3.jpg",
+      url: "/PRAC_tailwind_hotel/images/top3.jpg",
     },
     {
       id: "4",
@@ -45,7 +45,7 @@ function App() {
       stars: 4,
       reviews: 283,
       price: 1980,
-      url: "/src/assets/top4.jpg",
+      url: "/PRAC_tailwind_hotel/images/top4.jpg",
     },
     {
       id: "5",
@@ -53,7 +53,7 @@ function App() {
       stars: 5,
       reviews: 2431,
       price: 6800,
-      url: "/src/assets/Watana2.jpg",
+      url: "/PRAC_tailwind_hotel/images/Watana2.jpg",
     },
     {
       id: "6",
@@ -61,7 +61,7 @@ function App() {
       stars: 4,
       reviews: 1587,
       price: 4200,
-      url: "/src/assets/Rachada1.jpg",
+      url: "/PRAC_tailwind_hotel/images/Rachada1.jpg",
     },
     {
       id: "7",
@@ -69,7 +69,7 @@ function App() {
       stars: 5,
       reviews: 1983,
       price: 5600,
-      url: "/src/assets/DinDaeng1.jpg",
+      url: "/PRAC_tailwind_hotel/images/DinDaeng1.jpg",
     },
     {
       id: "8",
@@ -77,7 +77,7 @@ function App() {
       stars: 4,
       reviews: 1120,
       price: 3500,
-      url: "/src/assets/RangRak.jpg",
+      url: "/PRAC_tailwind_hotel/images/RangRak.jpg",
     },
   ];
 
@@ -86,37 +86,37 @@ function App() {
       id: "1",
       country: "JAPAN",
       city: "Osaka",
-      url: "/src/assets/Osaka.jpg",
+      url: "/PRAC_tailwind_hotel/images/Osaka.jpg",
     },
     {
       id: "2",
       country: "JAPAN",
       city: "Kyoto",
-      url: "/src/assets/Kyoto.jpg",
+      url: "/PRAC_tailwind_hotel/images/Kyoto.jpg",
     },
     {
       id: "3",
       country: "ICELAND",
       city: "Reykjavík",
-      url: "/src/assets/Reykjavic.jpg",
+      url: "/PRAC_tailwind_hotel/images/Reykjavic.jpg",
     },
     {
       id: "4",
       country: "FRANCE",
       city: "Paris",
-      url: "/src/assets/Paris.jpg",
+      url: "/PRAC_tailwind_hotel/images/Paris.jpg",
     },
     {
       id: "5",
       country: "ITALY",
       city: "Roma",
-      url: "/src/assets/Roman.jpg",
+      url: "/PRAC_tailwind_hotel/images/Roman.jpg",
     },
     {
       id: "6",
       country: "THAILAND",
       city: "Bangkok",
-      url: "/src/assets/Bangkok.jpg",
+      url: "/PRAC_tailwind_hotel/images/Bangkok.jpg",
     },
   ];
 
@@ -126,21 +126,21 @@ function App() {
       title: "The Fifth Most Visited Country",
       content:
         "Italy is the fifth most visited country in the world, with a total of 52.3 million…",
-      url: "/src/assets/italy.jpg",
+      url: "/PRAC_tailwind_hotel/images/italy.jpg",
     },
     {
       id: "2",
       title: "Visit Thailand for Bangkok",
       content:
         "Asian tourists primarily visit Thailand for Bangkok and the historical, natural, and…",
-      url: "/src/assets/Thailand.jpg",
+      url: "/PRAC_tailwind_hotel/images/Thailand.jpg",
     },
     {
       id: "3",
       title: "  Lord of the Rings Tour",
       content:
         "The national cuisine has been described as Pacific Rim, incorporating the native Māori…",
-      url: "/src/assets/NewZealand.jpg",
+      url: "/PRAC_tailwind_hotel/images/NewZealand.jpg",
     },
   ];
   const swiperRef = useRef(null);
@@ -167,7 +167,10 @@ function App() {
           </a>
           <a href="#">
             <h1>
-              <img src="/src/assets/logo-aloha.svg" alt="logo" />
+              <img
+                src="/PRAC_tailwind_hotel/images/logo-aloha.svg"
+                alt="logo"
+              />
             </h1>
           </a>
           <div className="flex items-center">
@@ -357,8 +360,9 @@ function App() {
               return (
                 <a
                   href="#"
-                  className={`bg-[url(${item.url})] btn-destination`}
+                  className={`btn-destination`}
                   key={item.id}
+                  style={{ backgroundImage: `url(${item.url})` }}
                 >
                   <div className="destination-drop"></div>
                   <div className="z-40">
